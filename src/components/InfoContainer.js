@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import numeral from 'numeral';
 
-import { Container } from '../styles/ui'
+import { Container, Emphasis } from '../styles/ui'
 
 const InfoContainers = styled.div`
   display: flex;
@@ -28,20 +28,20 @@ function InfoContainer({
     <InfoContainers>
         <InfoContainerItem onClick={() => setType('cases')}>
           <h1>Cases</h1>
-          <InfoLabel>+ {numeral(newCases).format('0,0')} today</InfoLabel>
-          <small>{numeral(totalCases).format(0,0)} total</small>
+          <InfoLabel>+ <Emphasis>{numeral(newCases).format('0,0')}</Emphasis> today</InfoLabel>
+          <small><Emphasis>{numeral(totalCases).format(0,0)}</Emphasis> total</small>
         </InfoContainerItem>
 
         <InfoContainerItem onClick={() => setType('recovered')}>
           <h1>Recoveries</h1>
-          <InfoLabel>+ {numeral(newRecoveries).format('0,0')} today</InfoLabel>
-          <small>{numeral(totalRecovered).format('0,0')} total</small>
+          <InfoLabel>+ <Emphasis>{numeral(newRecoveries).format('0,0')}</Emphasis> today</InfoLabel>
+          <small><Emphasis>{numeral(totalRecovered).format('0,0')}</Emphasis> total</small>
         </InfoContainerItem>
 
         <InfoContainerItem onClick={() => setType('deaths')}>
           <h1>Deaths</h1>
-          <InfoLabel>+ {numeral(newDeaths).format('0,0')} today</InfoLabel>
-          <small>{numeral(totalDeaths).format('0,0')} total</small>
+          <InfoLabel>+ <Emphasis>{numeral(newDeaths).format('0,0')}</Emphasis> today</InfoLabel>
+          <small><Emphasis>{numeral(totalDeaths).format('0,0')}</Emphasis> total</small>
         </InfoContainerItem>
     </InfoContainers>
   )

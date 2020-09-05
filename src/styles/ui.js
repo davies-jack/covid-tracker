@@ -37,3 +37,8 @@ export const Item = styled.li`
     margin-bottom: 1em;
   }
 `;
+
+export const Emphasis = styled.span`
+  color: ${({ theme }) => theme.primary1};
+  font-weight: bold;
+`;

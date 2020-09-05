@@ -7,6 +7,10 @@ import { Container } from '../styles/ui'
 const MapArea = styled.div`
   width: 60%;
   margin-right: 1em;
+
+  h1 {
+    margin: 0 0 .6em 0;
+  }
 `;
 const MapContainer = styled.div`
   height: 500px;
