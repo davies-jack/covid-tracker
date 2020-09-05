@@ -27,3 +27,9 @@ You can view cases, recoveries & deaths today globally or by country, and you ar
 - Leaflet, the map library. (Version: ^1.7.1)
 - React-Leaflet, making leaflet easier to use in React. (Version: ^2.7.0)
 - Numeral, for formatting numbers. (Version: ^2.0.6)
+
+## Next Steps
+
+- Centralising all margins & re-used colours into the `theming/index.js` file
+- A search function allowing you to search for a country
+- More information about cases etc
