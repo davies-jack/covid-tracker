@@ -9,7 +9,7 @@ const Header = styled.div`
   }
 `;
 const AppContainer = styled.div`
-  max-width: 60vw;
+  max-width: 70vw;
   margin: 0 auto;
 `;
 const InfoContainers = styled.div`
@@ -29,7 +29,7 @@ const Container = styled.div`
   }
  
   h1 {
-    margin: 0;
+    margin: 0 0 .2em 0;
     text-align: left;
   }
 `;
@@ -49,6 +49,26 @@ const MapArea = styled.div`
 `;
 const CountryInformation = styled.div`
   width: 40%;
+`;
+
+const List = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+`;
+const Item = styled.li`
+  background-color: #E5E7EB;
+  padding: 1em;
+  border-radius: 6px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &:not(:last-of-type) {
+    margin-bottom: 1em;
+  }
 `;
 
 function App() {
@@ -87,7 +107,36 @@ function App() {
         <CountryInformation>
           <Container>
             <h1>Country Information</h1>
-            <p>lorem</p>
+            <List>
+              <Item>
+                <span>United Kingdom</span>
+                <small>200,000</small>
+              </Item>
+              <Item>
+                <span>United Kingdom</span>
+                <small>200,000</small>
+              </Item>
+              <Item>
+                <span>United Kingdom</span>
+                <small>200,000</small>
+              </Item>
+              <Item>
+                <span>United Kingdom</span>
+                <small>200,000</small>
+              </Item>
+              <Item>
+                <span>United Kingdom</span>
+                <small>200,000</small>
+              </Item>
+              <Item>
+                <span>United Kingdom</span>
+                <small>200,000</small>
+              </Item>
+              <Item>
+                <span>United Kingdom</span>
+                <small>200,000</small>
+              </Item>
+            </List>
           </Container>
         </CountryInformation>
       </TrackerInfo>
