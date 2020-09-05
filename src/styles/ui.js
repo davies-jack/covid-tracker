@@ -24,7 +24,7 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  background-color: #E5E7EB;
+  background-color: #F4F5F7;
   padding: 1em;
   border-radius: 6px;
 
