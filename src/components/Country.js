@@ -11,10 +11,15 @@ const StyledContainer = styled(Container)`
   max-height: calc(500px + 40px + .6em + 2em + 6.4px);
   overflow-y: scroll;
 `;
+const StyledItem = styled(Item)`
+  background-color: ${({ active, theme }) => active === true ? `#D2D6DC` : `#F4F5F7`};
+  cursor: pointer;
+`;
 
 function CountryInformation({
     countryData,
-    setSelectedCountry
+    setSelectedCountry,
+    selectedCountry
 }) {
     return (
         <CountryInformationContainer>
@@ -33,11 +38,12 @@ function CountryInformation({
                   lat,
                   long
                 }}) => {
+                  console.log(selectedCountry == country);
                   return (
-                    <Item key={country} onClick={() => setSelectedCountry({ name: country, lat, long, cases,deaths,recovered,todayCases,todayDeaths,todayRecovered})}>
+                    <StyledItem active={selectedCountry.name == country} key={country} onClick={() => setSelectedCountry({ name: country, lat, long, cases,deaths,recovered,todayCases,todayDeaths,todayRecovered})}>
                       <span>{country}</span>
                       <small><Emphasis>{numeral(cases).format('0,0')}</Emphasis> cases</small>
-                    </Item>
+                    </StyledItem>
                   );
               }) : null}
             </List>
