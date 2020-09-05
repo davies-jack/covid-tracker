@@ -1,5 +1,14 @@
+@import 'normalize';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F9FAFB;
+}
+
 .App {
-  text-align: center;
 }
 
 .App-logo {
