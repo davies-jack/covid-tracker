@@ -13,7 +13,6 @@ const InfoContainers = styled.div`
 const InfoContainerItem = styled(Container)`
   width: calc(100% / 3);
 `;
-const InfoLabel = styled.div``;
 
 function InfoContainer({
   totalCases,
@@ -28,19 +27,19 @@ function InfoContainer({
     <InfoContainers>
         <InfoContainerItem onClick={() => setType('cases')}>
           <h1>Cases</h1>
-          <InfoLabel>+ <Emphasis>{numeral(newCases).format('0,0')}</Emphasis> today</InfoLabel>
+          <div>+ <Emphasis>{numeral(newCases).format('0,0')}</Emphasis> today</div>
           <small><Emphasis>{numeral(totalCases).format(0,0)}</Emphasis> total</small>
         </InfoContainerItem>
 
         <InfoContainerItem onClick={() => setType('recovered')}>
           <h1>Recoveries</h1>
-          <InfoLabel>+ <Emphasis>{numeral(newRecoveries).format('0,0')}</Emphasis> today</InfoLabel>
+          <div>+ <Emphasis>{numeral(newRecoveries).format('0,0')}</Emphasis> today</div>
           <small><Emphasis>{numeral(totalRecovered).format('0,0')}</Emphasis> total</small>
         </InfoContainerItem>
 
         <InfoContainerItem onClick={() => setType('deaths')}>
           <h1>Deaths</h1>
-          <InfoLabel>+ <Emphasis>{numeral(newDeaths).format('0,0')}</Emphasis> today</InfoLabel>
+          <div>+ <Emphasis>{numeral(newDeaths).format('0,0')}</Emphasis> today</div>
           <small><Emphasis>{numeral(totalDeaths).format('0,0')}</Emphasis> total</small>
         </InfoContainerItem>
     </InfoContainers>

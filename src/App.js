@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import * as api from './api';
+import * as api from './utils/api';
 import styled, { ThemeProvider } from 'styled-components';
+import { theme } from './theming/'
 import './App.css';
 
 import CountryInformation from './components/Country';
 import MapComponent from './components/Map';
 
-import { AppContainer, Header, CenterPage } from './styles/app'
+import { AppContainer, Header } from './styles/app'
 import InfoContainer from './components/InfoContainer';
 
 const TrackerInfo = styled.div`
@@ -14,10 +15,6 @@ const TrackerInfo = styled.div`
   flex-direction: row;
   margin-top: 2em;
 `;
-
-const theme = {
-  primary1: '#9061F9',
-}
 
 const caseTypes = {
   cases: {
