@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import numeral from 'numeral';
+import numeral from 'numeral'
 
 import { Container, Emphasis } from '../styles/ui'
 
@@ -14,7 +14,7 @@ const InfoContainerItem = styled(Container)`
   width: calc(100% / 3);
 `;
 
-function InfoContainer({
+function CaseInfo({
   totalCases,
   totalDeaths,
   totalRecovered,
@@ -46,7 +46,7 @@ function InfoContainer({
   )
 }
 
-InfoContainer.propTypes = {
+CaseInfo.propTypes = {
   totalCases: PropTypes.number.isRequired,
   totalDeaths: PropTypes.number.isRequired,
   totalRecovered: PropTypes.number.isRequired,
@@ -56,4 +56,4 @@ InfoContainer.propTypes = {
   setType: PropTypes.func.isRequired
 }
 
-export default InfoContainer
+export default CaseInfo

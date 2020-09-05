@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import PropTypes from 'prop-types'
-import { Map, TileLayer, Popup, Circle } from 'react-leaflet';
+import { Map, TileLayer, Popup, Circle } from 'react-leaflet'
 import { Container } from '../styles/ui'
 
 const MapArea = styled.div`

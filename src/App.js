@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import * as api from './utils/api';
-import styled, { ThemeProvider } from 'styled-components';
+import React, { useState, useEffect } from 'react'
+import * as api from './utils/api'
+import styled, { ThemeProvider } from 'styled-components'
 import { theme } from './theming/'
 import './App.css';
 
-import CountryInformation from './components/Country';
-import MapComponent from './components/Map';
+import CountryInformation from './components/Country'
+import MapComponent from './components/Map'
 
 import { AppContainer, Header } from './styles/app'
-import InfoContainer from './components/InfoContainer';
+import CaseInfo from './components/CaseInfo'
 
-const TrackerInfo = styled.div`
+const AreaInfo = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 2em;
@@ -77,7 +77,7 @@ function App() {
             <h1>Covid Tracker</h1>
           </Header>
 
-          <InfoContainer
+          <CaseInfo
             totalCases={selectedCountry.cases !== undefined ?  selectedCountry.cases : globalData.cases}
             totalDeaths={selectedCountry.deaths !== undefined ? selectedCountry.deaths : globalData.deaths}
             totalRecovered={selectedCountry.recovered !== undefined ? selectedCountry.recovered : globalData.recovered}
@@ -89,10 +89,10 @@ function App() {
             setType={setType}
           />
 
-          <TrackerInfo>
+          <AreaInfo>
             <MapComponent position={position} zoom={zoom} countryData={countryData} type={type} caseTypes={caseTypes} />
             <CountryInformation countryData={countryData} setSelectedCountry={setSelectedCountry} />
-          </TrackerInfo>
+          </AreaInfo>
       </AppContainer>
     </ThemeProvider>
   );
