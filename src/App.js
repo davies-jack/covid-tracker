@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import * as api from './api';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import './App.css';
 
 import CountryInformation from './components/Country';
 import MapComponent from './components/Map';
 
-import { AppContainer, Header } from './styles/app'
+import { AppContainer, Header, CenterPage } from './styles/app'
 import InfoContainer from './components/InfoContainer';
 
 const TrackerInfo = styled.div`
@@ -15,9 +15,13 @@ const TrackerInfo = styled.div`
   margin-top: 2em;
 `;
 
+const theme = {
+  primary1: '#9061F9',
+}
+
 const caseTypes = {
   cases: {
-    color: '#FACA15',
+    color: theme.primary1,
     size: 800,
   },
   recovered: {
@@ -31,19 +35,20 @@ const caseTypes = {
 };
 
 function App() {
-  const [trackerData, setTrackerData] = useState({});
+  const [globalData, setGlobalData] = useState({});
   const [countryData, setCountryData] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState({});
+  
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [type, setType] = useState("cases");
-  const [selectedCountry, setSelectedCountry] = useState(false);
 
+  const [type, setType] = useState("cases");
   const [position, setPosition] = useState([0,0]);
   const [zoom, setZoom] = useState(2);
 
   function getAllData() {
     api.getMainData()
-    .then((res) => setTrackerData(res))
+    .then((res) => setGlobalData(res))
     .catch(err => setError(err));
   }
   function getAllCountryData() {
@@ -65,32 +70,34 @@ function App() {
     }
   }, [selectedCountry])
   
-  if (isLoading || trackerData === {}) return <p>Loading . . .</p>;
+  if (isLoading || globalData === {}) return <p>Loading . . .</p>;
   if (error) return <p>There has been an error</p>;
 
   return (
-    <AppContainer>
-      <Header>
-        <h1>Covid Tracker</h1>
-      </Header>
+    <ThemeProvider theme={theme}>
+      <AppContainer>
+          <Header>
+            <h1>Covid Tracker</h1>
+          </Header>
 
-      <InfoContainer
-        totalCases={selectedCountry.cases !== undefined ?  selectedCountry.cases : trackerData.cases}
-        totalDeaths={selectedCountry.deaths !== undefined ? selectedCountry.deaths : trackerData.deaths}
-        totalRecovered={selectedCountry.recovered !== undefined ? selectedCountry.recovered : trackerData.recovered}
+          <InfoContainer
+            totalCases={selectedCountry.cases !== undefined ?  selectedCountry.cases : globalData.cases}
+            totalDeaths={selectedCountry.deaths !== undefined ? selectedCountry.deaths : globalData.deaths}
+            totalRecovered={selectedCountry.recovered !== undefined ? selectedCountry.recovered : globalData.recovered}
 
-        newCases={selectedCountry.todayCases !== undefined ?  selectedCountry.todayCases : trackerData.todayCases}
-        newDeaths={selectedCountry.todayDeaths !== undefined ?  selectedCountry.todayDeaths : trackerData.todayDeaths}
-        newRecoveries={selectedCountry.todayRecovered !== undefined ?  selectedCountry.todayRecovered : trackerData.todayRecovered}
+            newCases={selectedCountry.todayCases !== undefined ?  selectedCountry.todayCases : globalData.todayCases}
+            newDeaths={selectedCountry.todayDeaths !== undefined ?  selectedCountry.todayDeaths : globalData.todayDeaths}
+            newRecoveries={selectedCountry.todayRecovered !== undefined ?  selectedCountry.todayRecovered : globalData.todayRecovered}
 
-        setType={setType}
-      />
+            setType={setType}
+          />
 
-      <TrackerInfo>
-        <MapComponent position={position} zoom={zoom} countryData={countryData} type={type} caseTypes={caseTypes} />
-        <CountryInformation countryData={countryData} setSelectedCountry={setSelectedCountry} />
-      </TrackerInfo>
-    </AppContainer>
+          <TrackerInfo>
+            <MapComponent position={position} zoom={zoom} countryData={countryData} type={type} caseTypes={caseTypes} />
+            <CountryInformation countryData={countryData} setSelectedCountry={setSelectedCountry} />
+          </TrackerInfo>
+      </AppContainer>
+    </ThemeProvider>
   );
 }
 
