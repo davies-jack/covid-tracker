@@ -1,5 +1,7 @@
 # COVID-19 Tracker
 
+![screenshot](https://i.imgur.com/JDwRPSQ.png)
+
 ## About
 
 I decided to create this small COVID-19 tracker app as I wanted to create something that I can practice my skills with, and learn more about using maps (leaflet to be specific).
