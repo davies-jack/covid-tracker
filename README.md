@@ -21,12 +21,15 @@ You can view cases, recoveries & deaths today globally or by country, and you ar
 
 ## Packages
 
-- React
-- Styled Components, to style the app. (Version: ^5.2.0)
-- Axios, to make HTTP requests. (Version: ^0.20.0)
-- Leaflet, the map library. (Version: ^1.7.1)
-- React-Leaflet, making leaflet easier to use in React. (Version: ^2.7.0)
-- Numeral, for formatting numbers. (Version: ^2.0.6)
+- React (Version 16.13.1)
+- React Testing Library (Version: 11.0.4)
+- Husky (Version: 4.3.0)
+- cross-env (Version: 7.0.2)
+- Styled Components, to style the app. (Version: 5.2.0)
+- Axios, to make HTTP requests. (Version: 0.20.0)
+- Leaflet, the map library. (Version: 1.7.1)
+- React-Leaflet, making leaflet easier to use in React. (Version: 2.7.0)
+- Numeral, for formatting numbers. (Version: 2.0.6)
 
 ## Next Steps
 
