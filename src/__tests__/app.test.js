@@ -50,7 +50,6 @@ test('Page loads and outputs data from api', async () => {
 test('On server error give error message', async () => {
     server.use(
         rest.get(API_ALL_URL, (req, res, ctx) => {
-          // Respond with "500 Internal Server Error" status for this test.
           return res(
             ctx.status(500),
             ctx.json({ message: 'Internal Server Error' }),
