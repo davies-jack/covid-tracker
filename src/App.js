@@ -72,7 +72,7 @@ function App() {
   }, [selectedCountry])
   
   if (isLoading || globalData === {}) return <p>Loading . . .</p>;
-  if (error) return <p>There has been an error</p>;
+  if (error) return <p data-testid="error">There has been an error</p>;
 
   return (
     <ThemeProvider theme={theme}>
