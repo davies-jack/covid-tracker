@@ -6,6 +6,11 @@ import { Container, List, Item, Emphasis } from '../styles/ui'
 
 const CountryInformationContainer = styled.div`
   width: 40%;
+
+  @media(max-width: 768px) {
+    width: 100%;
+    margin-top: 2em;
+  }
 `;
 const StyledContainer = styled(Container)`
   max-height: calc(500px + 40px + .6em + 2em + 6.4px);

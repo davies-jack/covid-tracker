@@ -6,14 +6,16 @@ export const Container = styled.div`
   box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05)!important;
   padding: 1em;
   border-radius: 6px;
-
-  &:nth-of-type(2) {
-    margin: 0 1em;
-  }
  
   h1 {
     margin: 0 0 .2em 0;
     text-align: left;
+  }
+
+  @media(min-width: 630px) {
+    &:nth-of-type(2) {
+      margin: 0 1em;
+    }  
   }
 `;
 

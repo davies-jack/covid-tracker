@@ -14,6 +14,10 @@ const AreaInfo = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 2em;
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 const caseTypes = {

@@ -11,6 +11,10 @@ const MapArea = styled.div`
   h1 {
     margin: 0 0 .6em 0;
   }
+
+  @media(max-width: 768px) {
+    width: 100%;
+  }
 `;
 const MapContainer = styled.div`
   height: 500px;

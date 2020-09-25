@@ -9,9 +9,19 @@ const InfoContainers = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media(max-width: 630px) {
+    flex-direction: column;
+  }
 `;
 const InfoContainerItem = styled(Container)`
   width: calc(100% / 3);
+  @media(max-width: 630px) {
+    width: 100%;
+    &:nth-of-type(2) {
+      margin: 1em 0;
+    }
+  }
 `;
 
 function CaseInfo({
