@@ -43,7 +43,6 @@ function CountryInformation({
                   lat,
                   long
                 }}) => {
-                  console.log(selectedCountry == country);
                   return (
                     <StyledItem active={selectedCountry.name == country} key={country} onClick={() => setSelectedCountry({ name: country, lat, long, cases,deaths,recovered,todayCases,todayDeaths,todayRecovered})}>
                       <span>{country}</span>
