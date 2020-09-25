@@ -44,7 +44,7 @@ function CountryInformation({
                   long
                 }}) => {
                   return (
-                    <StyledItem active={selectedCountry.name == country} key={country} onClick={() => setSelectedCountry({ name: country, lat, long, cases,deaths,recovered,todayCases,todayDeaths,todayRecovered})}>
+                    <StyledItem active={selectedCountry.name === country} key={country} onClick={() => setSelectedCountry({ name: country, lat, long, cases,deaths,recovered,todayCases,todayDeaths,todayRecovered})}>
                       <span>{country}</span>
                       <small><Emphasis>{numeral(cases).format('0,0')}</Emphasis> cases</small>
                     </StyledItem>
