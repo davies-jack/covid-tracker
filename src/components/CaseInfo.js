@@ -37,20 +37,20 @@ function CaseInfo({
     <InfoContainers>
         <InfoContainerItem onClick={() => setType('cases')}>
           <h1>Cases</h1>
-          <div>+ <Emphasis>{numeral(newCases).format('0,0')}</Emphasis> today</div>
-          <small><Emphasis>{numeral(totalCases).format(0,0)}</Emphasis> total</small>
+          <div data-testid="new-cases">+ <Emphasis>{numeral(newCases).format('0,0')}</Emphasis> today</div>
+          <small data-testid="total-cases"><Emphasis>{numeral(totalCases).format(0,0)}</Emphasis> total</small>
         </InfoContainerItem>
 
         <InfoContainerItem onClick={() => setType('recovered')}>
           <h1>Recoveries</h1>
-          <div>+ <Emphasis>{numeral(newRecoveries).format('0,0')}</Emphasis> today</div>
-          <small><Emphasis>{numeral(totalRecovered).format('0,0')}</Emphasis> total</small>
+          <div data-testid="new-recoveries">+ <Emphasis>{numeral(newRecoveries).format('0,0')}</Emphasis> today</div>
+          <small data-testid="total-recoveries"><Emphasis>{numeral(totalRecovered).format('0,0')}</Emphasis> total</small>
         </InfoContainerItem>
 
         <InfoContainerItem onClick={() => setType('deaths')}>
           <h1>Deaths</h1>
-          <div>+ <Emphasis>{numeral(newDeaths).format('0,0')}</Emphasis> today</div>
-          <small><Emphasis>{numeral(totalDeaths).format('0,0')}</Emphasis> total</small>
+          <div data-testid="new-deaths">+ <Emphasis>{numeral(newDeaths).format('0,0')}</Emphasis> today</div>
+          <small data-testid="total-deaths"><Emphasis>{numeral(totalDeaths).format('0,0')}</Emphasis> total</small>
         </InfoContainerItem>
     </InfoContainers>
   )
