@@ -57,13 +57,13 @@ function CaseInfo({
 }
 
 CaseInfo.propTypes = {
-  totalCases: PropTypes.number.isRequired,
-  totalDeaths: PropTypes.number.isRequired,
-  totalRecovered: PropTypes.number.isRequired,
-  newCases: PropTypes.number.isRequired,
-  newDeaths: PropTypes.number.isRequired,
-  newRecoveries: PropTypes.number.isRequired,
-  setType: PropTypes.func.isRequired
+  totalCases: PropTypes.number,
+  totalDeaths: PropTypes.number,
+  totalRecovered: PropTypes.number,
+  newCases: PropTypes.number,
+  newDeaths: PropTypes.number,
+  newRecoveries: PropTypes.number,
+  setType: PropTypes.func
 }
 
 export default CaseInfo
