@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^11.0.4",
-    "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
     "leaflet": "^1.7.1",
     "msw": "^0.21.2",
@@ -19,8 +16,15 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jest-environment-jsdom-sixteen",
-    "eject": "react-scripts eject"
+    "test": "cross-env CI=true react-scripts test --env=jest-environment-jsdom-sixteen",
+    "eject": "react-scripts eject",
+    "lint": "eslint src"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint && yarn test",
+      "pre-push": "yarn run lint && yarn test"
+    }
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,5 +40,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": "^4.3.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^11.0.4",
+    "@testing-library/user-event": "^7.1.2",
   }
 }
