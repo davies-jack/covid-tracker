@@ -91,7 +91,7 @@ function App() {
 
           <AreaInfo>
             <MapComponent position={position} zoom={zoom} countryData={countryData} type={type} caseTypes={caseTypes} />
-            <CountryInformation countryData={countryData} setSelectedCountry={setSelectedCountry} />
+            <CountryInformation countryData={countryData} selectedCountry={selectedCountry} setSelectedCountry={setSelectedCountry} />
           </AreaInfo>
       </AppContainer>
     </ThemeProvider>
